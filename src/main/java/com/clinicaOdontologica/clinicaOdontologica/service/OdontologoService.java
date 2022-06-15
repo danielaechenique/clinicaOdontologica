@@ -1,7 +1,43 @@
 package com.clinicaOdontologica.clinicaOdontologica.service;
 
 
-import com.clinicaOdontologica.clinicaOdontologica.DAO.ConfiguracionJDBC;
+import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
+import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
+import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.List;
+
+public class OdontologoService {
+    private IRepository<Odontologo> odontologoRepository;
+
+    public OdontologoService(IRepository<Odontologo> odontologoRepository) {
+        this.odontologoRepository = odontologoRepository;
+    }
+    public List<OdontologoDTO> agregarYlistar(){
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.convertValue(odontologoRepository.agregarYListar(),new TypeReference<List<OdontologoDTO>>(){});
+
+    }
+    public Odontologo agregarOdontologo(Odontologo odontologo) {
+        return this.odontologoRepository.agregar(odontologo);
+    }
+
+    public Odontologo buscar(Long id){
+        return odontologoRepository.buscar(id);
+    }
+
+    public Boolean eliminar(Long id){
+        return odontologoRepository.eliminar(id);
+    }
+
+    public Odontologo actualizar(Odontologo odontologo){
+        return odontologoRepository.actualizar(odontologo);
+    }
+
+}
+/*import com.clinicaOdontologica.clinicaOdontologica.DAO.ConfiguracionJDBC;
 import com.clinicaOdontologica.clinicaOdontologica.DAO.IDao;
 import com.clinicaOdontologica.clinicaOdontologica.DAO.impl.OdontologoDaoH2;
 import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
@@ -29,12 +65,12 @@ public class OdontologoService {
 
     public Odontologo getOdontologoById(String email){
         for (Odontologo paciente : odontologos) {
-            /*if (paciente.getId().equals(email)) {
+            *//*if (paciente.getId().equals(email)) {
                 return paciente;
-            }*/
+            }*//*
         }
         return null;
-    }
+    }*/
 
     /*private static final Logger logger = Logger.getLogger(OdontologoService.class);
     private IDao<Odontologo> odontologoIdao = new OdontologoDaoH2(new ConfiguracionJDBC());
@@ -114,6 +150,6 @@ public class OdontologoService {
             logger.error(e.getMessage());
         }
         return respuesta;
-    }*/
+    }
 
-}
+}*/

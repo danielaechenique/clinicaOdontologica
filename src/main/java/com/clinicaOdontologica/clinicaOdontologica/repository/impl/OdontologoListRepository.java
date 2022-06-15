@@ -44,5 +44,6 @@ public class OdontologoListRepository implements IRepository<Odontologo>{
             }
         }
         return null;
+        //return listado.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
     }
 }
