@@ -1,27 +1,31 @@
 package com.clinicaOdontologica.clinicaOdontologica.repository.impl;
-
 import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
 import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class OdontologoListRepository implements IRepository<Odontologo>{
-    private List<Odontologo> listado = agregarYListar();
+    private List<Odontologo> odontologos;
+
+    public OdontologoListRepository(){
+        this.odontologos = cargarOdontologos();
+    }
+
+    private List<Odontologo> cargarOdontologos(){
+        return new ArrayList<Odontologo>(Arrays.asList(new Odontologo(1,"juana" , "larosa","123wer"),new Odontologo(2, "Pedro","Caster","234ert")));
+    }
 
     @Override
-    public List<Odontologo> agregarYListar() {
-        List<Odontologo> listado = new ArrayList<>();
-        listado.add(new Odontologo(1, "ana", "molina", "matricula12"));
-        listado.add(new Odontologo(2,"flor", "holgado", "matricula34"));
-        listado.add(new Odontologo(3,"dani", "echeniqueo", "matricula45"));
-        return listado;
+    public List<Odontologo> buscarTodas() {
+        return this.odontologos;
     }
 
     @Override
     public Odontologo agregar(Odontologo odontologo) {
-        this.listado.add(odontologo);
-        return null;
+        this.odontologos.add(odontologo);
+        return odontologo;
     }
 
     @Override
@@ -33,17 +37,17 @@ public class OdontologoListRepository implements IRepository<Odontologo>{
 
     @Override
     public Boolean eliminar(Long id) {
-        return listado.removeIf(odontologo -> odontologo.getId() == (id));
+        return odontologos.removeIf(odontologo -> odontologo.getId() == (id));
     }
 
     @Override
     public Odontologo buscar(Long id) {
-        for(Odontologo odontologo : listado){
+        for(Odontologo odontologo : odontologos){
             if(odontologo.getId() == (id)){
                 return odontologo;
             }
         }
         return null;
-        //return listado.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
+        //return odontologos.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
     }
 }
