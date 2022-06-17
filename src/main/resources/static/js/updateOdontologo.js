@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
                                                 ", age:" + odontologo.age  + "}"
                     let successAlert = '<div class="alert alert-success alert-dismissible">' +
                                             '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '<strong> pelicula = </strong> ' + data.toString();
+                                            '<strong> odontologo = </strong> ' + data.toString();
                                         '</div>'
 
                     // change the updated data for odontologo table record
