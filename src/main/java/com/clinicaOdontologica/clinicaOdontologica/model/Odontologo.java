@@ -31,7 +31,7 @@ public class Odontologo {
         this.id = id;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

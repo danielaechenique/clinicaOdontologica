@@ -36,12 +36,12 @@ public class OdontologoListRepository implements IRepository<Odontologo>{
     }
 
     @Override
-    public Boolean eliminar(Long id) {
+    public Boolean eliminar(Integer id) {
         return odontologos.removeIf(odontologo -> odontologo.getId() == (id));
     }
 
     @Override
-    public Odontologo buscar(Long id) {
+    public Odontologo buscar(Integer id) {
         return odontologos.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
     }
 }

@@ -6,7 +6,7 @@ public interface IRepository<T>{
     List<T> buscarTodas();
     T agregar(T t);
     T actualizar(T t);
-    Boolean eliminar (Long id);
-    T buscar (Long id);
+    Boolean eliminar (Integer id);
+    T buscar (Integer id);
 
 }

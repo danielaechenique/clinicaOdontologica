@@ -24,11 +24,11 @@ public class OdontologoService {
         return this.odontologoRepository.agregar(odontologo);
     }
 
-    public Odontologo buscar(Long id){
+    public Odontologo buscar(Integer id){
         return odontologoRepository.buscar(id);
     }
 
-    public Boolean eliminar(Long id){
+    public Boolean eliminar(Integer id){
         return odontologoRepository.eliminar(id);
     }
 
