@@ -39,10 +39,10 @@ public class PacienteService {
     }*/
 
     // Metodos CRUD
-    public String guardar(String apellido, String nombre, String domicilio, String dni, Date fechaDeAlta) {
+    public String guardar(String apellido, String nombre, String dni, Date fechaDeAlta) {
         String respuesta = "No se pudo guadar el Paciente";
         try {
-            Paciente paciente = new Paciente(apellido, nombre, domicilio, dni, fechaDeAlta);
+            Paciente paciente = new Paciente(apellido, nombre, dni, fechaDeAlta);
             Paciente insertado = pacienteIdao.guardar(paciente);
             respuesta = "El Paciente " + insertado + " fue guardado con exito"; //revisar
             logger.info(respuesta);

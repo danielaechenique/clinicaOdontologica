@@ -36,12 +36,11 @@ public class PacienteDaoH2 implements IDao<Paciente> {
         //Establece una coneccion
         Connection connection = configuracionJDBC.obtenerConexionConBD();
         // Crear una sentencia
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO pacientes VALUES(?,?,?,?,?,?)");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO pacientes VALUES(?,?,?,?,?)");
         ;
         preparedStatement.setLong(1, paciente.getId());
         preparedStatement.setString(2, paciente.getApellido());
         preparedStatement.setString(3, paciente.getNombre());
-        preparedStatement.setString(4, paciente.getDomicilio());
         preparedStatement.setString(5, paciente.getDni());
         preparedStatement.setDate(6, paciente.getFechaDeAlta());
 
@@ -76,7 +75,6 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             paciente.setId(resultado.getLong("id"));
             paciente.setApellido(resultado.getString("apellido"));
             paciente.setNombre(resultado.getString("nombre"));
-            paciente.setDomicilio(resultado.getString("domicilio"));
             paciente.setDni(resultado.getString("dni"));
             paciente.setFechaeDeAlta(resultado.getDate("fechaDeAlta"));
         } else {
@@ -109,11 +107,10 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             Long idPaciente = resultado.getLong("id");
             String apellido = resultado.getString("apellido");
             String nombre = resultado.getString("nombre");
-            String domicilio = resultado.getString("domicilio");
             String dni = resultado.getString("dni");
             Date fechaDeAlta = resultado.getDate("fechaDeAlta");
 
-            Paciente paciente = new Paciente(idPaciente, apellido, nombre, domicilio, dni, fechaDeAlta);
+            Paciente paciente = new Paciente(idPaciente, apellido, nombre, dni, fechaDeAlta);
 
             pacientes.add(paciente);
         }
