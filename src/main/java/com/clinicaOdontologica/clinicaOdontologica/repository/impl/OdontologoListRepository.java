@@ -1,11 +1,13 @@
 package com.clinicaOdontologica.clinicaOdontologica.repository.impl;
 import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
 import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Repository
 public class OdontologoListRepository implements IRepository<Odontologo>{
     private List<Odontologo> odontologos;
 

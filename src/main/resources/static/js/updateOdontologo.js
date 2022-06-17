@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
             apellido: document.querySelector('#apellido').value,
             matricula: document.querySelector('#matricula').value,
         };
-        const url = '/odontologos';
+        const url = '/odontologos/';
         const settings = {
             method: 'PUT',
             headers: {
@@ -40,7 +40,7 @@ window.addEventListener('load', function () {
         }).catch(error => {
             let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
             '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '<strong> Error </strong></div>';
+            '<strong> Error danoeila </strong></div>';
 
             $("#response").empty();
             $("#response").append(errorAlert);
@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
           fetch(url,settings)
           .then(response => response.json())
           .then(data => {
-              let pelicula = data;
+              let odontologo = data;
               $("#odontologo_id").val(odontologo.id);
               $("#nombre").val(odontologo.nombre);
               $("#apellido").val(odontologo.apellido);

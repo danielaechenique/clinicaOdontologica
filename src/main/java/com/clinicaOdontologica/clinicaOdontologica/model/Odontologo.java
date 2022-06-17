@@ -2,6 +2,7 @@ package com.clinicaOdontologica.clinicaOdontologica.model;
 
 import java.util.Objects;
 
+//@Entity
 public class Odontologo {
     private Integer id;
     private String nombre;

@@ -5,9 +5,11 @@ import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OdontologoService {
     private IRepository<Odontologo> odontologoRepository;
 
