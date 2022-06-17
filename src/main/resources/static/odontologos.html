@@ -8,9 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-   <!-- <script type="text/javascript" src="/js/update_pelicula.js"></script>
-    <script type="text/javascript" src="/js/delete_pelicula.js"></script>-->
-    <script type="text/javascript" src="/getOdontologos.js"></script>
+    <script type="text/javascript" src="/js/updateOdontologo.js"></script>
+    <script type="text/javascript" src="/js/deleteOdontologo.js"></script>
+    <script type="text/javascript" src="/js/getOdontologos.js"></script>
 </head>
 <body>
 <div class="container">
@@ -32,7 +32,7 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th></th>
+                    <th>Matricula</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,28 +40,26 @@
             </table>
         </div>
     </div>
-<!--    <div class="row">
-        <div class="col-sm-6" style="display: none;
-											background-color:#e6fffa; padding:10px; border-radius:3px"
-             id="div_pelicula_updating">
-            <form id="update_pelicula_form">
+    <div class="row">
+        <div class="col-sm-6" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_odontologo_updating">
+            <form id="update_odontologo_form">
                 <div class="form-group">
-                    <label for="pelicula_id">Id:</label>
-                    <input type="text" class="form-control" id="pelicula_id" readonly>
+                    <label for="odontologo_id">Id:</label>
+                    <input type="text" class="form-control" id="odontologo_id" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="pelicula_titulo">Titulo:</label>
-                    <input type="text" class="form-control" placeholder="Titulo" id="titulo">
+                    <label for="odontologo_nombre">Nombre:</label>
+                    <input type="text" class="form-control" placeholder="Nombre" id="odontologo_nombre">
                 </div>
                 <div class="form-group">
-                    <label for="pelicula_categoria">Categoria:</label>
-                    <input type="text" class="form-control" placeholder="Categoria" id="categoria">
+                    <label for="odontologo_apellido">Apellido:</label>
+                    <input type="text" class="form-control" placeholder="Apellido" id="odontologo_apellido">
                 </div>
 
                 <div class="form-group">
-                    <label for="pelicula_premios">Premios:</label>
+                    <label for="odontologo_matricula">Matricula:</label>
                     <input type="number" class="form-control"
-                           placeholder="Premios" id="premios">
+                           placeholder="Matricula" id="odontologo_matricula">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -71,29 +69,29 @@
     </div>
     <hr>
 
-    &lt;!&ndash; The Modal &ndash;&gt;
+    <!-- The Modal -->
     <div class="modal fade" id="delete-modal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
-                &lt;!&ndash; Modal Header &ndash;&gt;
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Eliminada!</h4>
+                    <h4 class="modal-title">Eliminado!</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                &lt;!&ndash; Modal body &ndash;&gt;
+                <!-- Modal body -->
                 <div class="modal-body">
                 </div>
 
-                &lt;!&ndash; Modal footer &ndash;&gt;
+                <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 </div>
 </body>
 </html>
