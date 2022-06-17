@@ -3,7 +3,7 @@ package com.clinicaOdontologica.clinicaOdontologica.model;
 import java.util.Objects;
 
 public class Domicilio {
-    private int id;
+    private Integer id;
     private String calle;
     private int numero;
     private String localidad;

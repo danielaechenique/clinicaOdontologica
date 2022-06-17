@@ -3,13 +3,13 @@ package com.clinicaOdontologica.clinicaOdontologica.model;
 import java.util.Objects;
 
 public class Odontologo {
-    private long id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private String matricula;
 
     //Constructor
-    public Odontologo(long id, String nombre, String apellido, String matricula) {
+    public Odontologo(Integer id, String nombre, String apellido, String matricula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -27,7 +27,7 @@ public class Odontologo {
     }
 
     //Getters and Setters
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

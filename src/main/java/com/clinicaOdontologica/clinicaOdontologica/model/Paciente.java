@@ -4,14 +4,14 @@ import java.sql.Date;
 import java.util.Objects;
 
 public class Paciente {
-    private long id;
+    private Integer id;
     private String apellido;
     private String nombre;
     private String dni;
     private Date fechaDeAlta;
     private Domicilio domicilio;
 
-    public Paciente(long id, String apellido, String nombre, String dni, Date fechaDeAlta) {
+    public Paciente(Integer id, String apellido, String nombre, String dni, Date fechaDeAlta) {
         this.id = id;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -34,7 +34,7 @@ public class Paciente {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

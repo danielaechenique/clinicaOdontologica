@@ -42,12 +42,6 @@ public class OdontologoListRepository implements IRepository<Odontologo>{
 
     @Override
     public Odontologo buscar(Long id) {
-        for(Odontologo odontologo : odontologos){
-            if(odontologo.getId() == (id)){
-                return odontologo;
-            }
-        }
-        return null;
-        //return odontologos.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
+        return odontologos.stream().filter(odontologo -> odontologo.getId()==(id)).findFirst().orElseGet(null);
     }
 }
