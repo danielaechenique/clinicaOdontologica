@@ -1,12 +1,5 @@
 package service;
 
-import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
-import com.clinicaOdontologica.clinicaOdontologica.service.OdontologoService;
-import org.apache.log4j.PropertyConfigurator;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 

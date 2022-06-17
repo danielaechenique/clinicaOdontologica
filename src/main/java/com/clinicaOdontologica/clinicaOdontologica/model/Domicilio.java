@@ -1,4 +1,4 @@
-package com.clinicaOdontologica.clinicaOdontologica.domain;
+package com.clinicaOdontologica.clinicaOdontologica.model;
 
 import java.util.Objects;
 

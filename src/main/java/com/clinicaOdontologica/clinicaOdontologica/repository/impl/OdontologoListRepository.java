@@ -1,5 +1,5 @@
 package com.clinicaOdontologica.clinicaOdontologica.repository.impl;
-import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
+import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
 import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
 
 import java.util.ArrayList;

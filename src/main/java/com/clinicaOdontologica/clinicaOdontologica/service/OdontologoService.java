@@ -1,6 +1,6 @@
 package com.clinicaOdontologica.clinicaOdontologica.service;
 
-import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
+import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
 import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,6 +1,6 @@
 package com.clinicaOdontologica.clinicaOdontologica.controller;
 
-import com.clinicaOdontologica.clinicaOdontologica.domain.Odontologo;
+import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
 import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.repository.impl.OdontologoListRepository;
 import com.clinicaOdontologica.clinicaOdontologica.service.OdontologoService;
