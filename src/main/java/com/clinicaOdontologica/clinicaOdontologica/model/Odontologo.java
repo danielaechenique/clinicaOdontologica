@@ -1,5 +1,6 @@
 package com.clinicaOdontologica.clinicaOdontologica.model;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
 //@Entity
