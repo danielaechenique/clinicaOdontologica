@@ -1,54 +1,50 @@
 package com.clinicaOdontologica.clinicaOdontologica.controller;
 
-import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
-import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
-import com.clinicaOdontologica.clinicaOdontologica.repository.impl.OdontologoListRepository;
+import com.clinicaOdontologica.clinicaOdontologica.model.OdontologoDTO;
+import com.clinicaOdontologica.clinicaOdontologica.service.IOdontologoService;
 import com.clinicaOdontologica.clinicaOdontologica.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Random;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/odontologos")
 public class OdontologoController {
-    @Autowired
-    private OdontologoService odontologoService;
-    //private OdontologoService odontologoService = new OdontologoService(new OdontologoListRepository());
 
-    @GetMapping
-    public List<OdontologoDTO> buscarTodas(){
-        return odontologoService.buscarTodas();
+    @Autowired
+    IOdontologoService odontologoService;
+
+    @PostMapping()
+    public ResponseEntity<?> agregarOdontologo(@RequestBody OdontologoDTO odontologo) {
+        odontologoService.crearOdontologo(odontologo);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public OdontologoDTO leerOdontologo(@PathVariable Long id) throws Exception {
+        return odontologoService.leerOdontologo(id);
+    }
+
+    @PutMapping()
+    public ResponseEntity<?> actualizarOdontologo(@RequestBody OdontologoDTO odontologo) {
+        odontologoService.actualizarOdontologo(odontologo);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity eliminar(@PathVariable Integer id){
-        ResponseEntity response = null;
-        if (odontologoService.eliminar(id)){
-            response = ResponseEntity.status(HttpStatus.OK).build();
-        } else {
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+    public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id) {
+
+        ResponseEntity<String> response = null;
+        odontologoService.borrarOdontologo(id);
+        response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
         return response;
     }
 
-    @PostMapping
-    public ResponseEntity<Odontologo> agregarOdontologo(@RequestBody Odontologo odontologo){
-        odontologo.setId(Math.abs(new Random().nextInt()));
-        return  ResponseEntity.ok(odontologoService.agregarOdontologo(odontologo));
+    @GetMapping("/list")
+    public Set<OdontologoDTO> listStudents() {
+        return odontologoService.getAll();
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo){
-        return ResponseEntity.ok(odontologoService.actualizar(odontologo));
-    }
-    @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscar(@PathVariable Integer id){
-        return ResponseEntity.ok(odontologoService.buscar(id));
-    }
-
 }

@@ -1,41 +1,62 @@
 package com.clinicaOdontologica.clinicaOdontologica.service;
 
 import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
-import com.clinicaOdontologica.clinicaOdontologica.dto.OdontologoDTO;
-import com.clinicaOdontologica.clinicaOdontologica.repository.IRepository;
-import com.fasterxml.jackson.core.type.TypeReference;
+import com.clinicaOdontologica.clinicaOdontologica.model.OdontologoDTO;
+import com.clinicaOdontologica.clinicaOdontologica.repository.IOdontologoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
-public class OdontologoService {
-    private IRepository<Odontologo> odontologoRepository;
+public class OdontologoService implements IOdontologoService{
+    @Autowired
+    IOdontologoRepository odontologoRepository;
 
-    public OdontologoService(IRepository<Odontologo> odontologoRepository) {
-        this.odontologoRepository = odontologoRepository;
+    @Autowired
+    ObjectMapper mapper;
+
+    private void guardarOdontologo(OdontologoDTO odontologo){
+        Odontologo newOdontologo = mapper.convertValue(odontologo, Odontologo.class);
+        odontologoRepository.save(newOdontologo);
     }
 
-    public List<OdontologoDTO> buscarTodas(){
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.convertValue(odontologoRepository.buscarTodas(),new TypeReference<List<OdontologoDTO>>(){});
-
-    }
-    public Odontologo agregarOdontologo(Odontologo odontologo) {
-        return this.odontologoRepository.agregar(odontologo);
+    @Override
+    public void crearOdontologo(OdontologoDTO odontologo){
+        guardarOdontologo(odontologo);
     }
 
-    public Odontologo buscar(Integer id){
-        return odontologoRepository.buscar(id);
+    @Override
+    public OdontologoDTO leerOdontologo(Long id) throws Exception {
+        Optional<Odontologo> odontologoEncontrado = odontologoRepository.findById(id);
+        OdontologoDTO odontologoDTO = null;
+        if(odontologoEncontrado.isPresent())
+            odontologoDTO = mapper.convertValue(odontologoEncontrado, OdontologoDTO.class);
+        else
+            throw new Exception("Odontologo no existe");
+        return odontologoDTO;
+
     }
 
-    public Boolean eliminar(Integer id){
-        return odontologoRepository.eliminar(id);
+    @Override
+    public void actualizarOdontologo(OdontologoDTO odontologo) {
+        guardarOdontologo(odontologo);
     }
 
-    public Odontologo actualizar(Odontologo odontologo){
-        return odontologoRepository.actualizar(odontologo);
+    @Override
+    public void borrarOdontologo(Long id) {
+        odontologoRepository.deleteById(id);
+    }
+
+    @Override
+    public Set<OdontologoDTO> getAll() {
+        List<Odontologo> allOdontologos = odontologoRepository.findAll();
+        Set<OdontologoDTO> allOdontologosDTO = new HashSet<>();
+        for(Odontologo odontologo: allOdontologos)
+            allOdontologosDTO.add(mapper.convertValue(odontologo,OdontologoDTO.class));
+
+        return allOdontologosDTO;
     }
 
 }
