@@ -13,12 +13,23 @@ import java.util.Set;
 public class Odontologo {
 
     @Id
-    @GeneratedValue
+    //@SequenceGenerator()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String nombre;
     private String apellido;
     private String matricula;
+
+    public Odontologo(Long id, String nombre, String apellido, String matricula, Set<Turno> turnos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.matricula = matricula;
+        this.turnos = turnos;
+    }
+    public Odontologo(){
+    }
 
     @OneToMany(mappedBy = "odontologo")
     @JsonIgnore
