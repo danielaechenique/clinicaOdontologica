@@ -10,6 +10,6 @@ public interface IOdontologoService {
     OdontologoDTO leerOdontologo(Long id) throws Exception;
     void actualizarOdontologo(OdontologoDTO paciente);
     void borrarOdontologo(Long id);
-    Set<OdontologoDTO> getAll();
+    Set<OdontologoDTO> traerTodos();
 
 }

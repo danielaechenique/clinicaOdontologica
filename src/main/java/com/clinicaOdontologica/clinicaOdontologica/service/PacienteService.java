@@ -50,7 +50,7 @@ public class PacienteService implements IPacienteService{
     }
 
     @Override
-    public Collection<PacienteDTO> getAll() {
+    public Set<PacienteDTO> traerTodos() {
         List<Paciente> allPacientes = pacienteRepository.findAll();
         Set<PacienteDTO> allPacientesDTO = new HashSet<PacienteDTO>();
         for(Paciente paciente: allPacientes)

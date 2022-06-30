@@ -50,7 +50,7 @@ public class OdontologoService implements IOdontologoService{
     }
 
     @Override
-    public Set<OdontologoDTO> getAll() {
+    public Set<OdontologoDTO> traerTodos() {
         List<Odontologo> allOdontologos = odontologoRepository.findAll();
         Set<OdontologoDTO> allOdontologosDTO = new HashSet<>();
         for(Odontologo odontologo: allOdontologos)

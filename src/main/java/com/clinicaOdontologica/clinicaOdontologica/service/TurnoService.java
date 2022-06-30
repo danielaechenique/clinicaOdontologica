@@ -1,7 +1,5 @@
 package com.clinicaOdontologica.clinicaOdontologica.service;
 
-import com.clinicaOdontologica.clinicaOdontologica.model.Odontologo;
-import com.clinicaOdontologica.clinicaOdontologica.model.OdontologoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.model.Turno;
 import com.clinicaOdontologica.clinicaOdontologica.model.TurnoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.repository.ITurnoRepository;
@@ -50,7 +48,7 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public Collection<TurnoDTO> getAll() {
+    public Set<TurnoDTO> traerTodos() {
         List<Turno> allTurnos = turnoRepository.findAll();
         Set<TurnoDTO> allTurnosDTO = new HashSet<TurnoDTO>();
         for(Turno turno: allTurnos)

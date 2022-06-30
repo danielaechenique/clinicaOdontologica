@@ -2,7 +2,6 @@ package com.clinicaOdontologica.clinicaOdontologica.service;
 
 import com.clinicaOdontologica.clinicaOdontologica.model.*;
 
-import java.util.Collection;
 import java.util.Set;
 
 public interface ITurnoService {
@@ -10,5 +9,5 @@ public interface ITurnoService {
     TurnoDTO leerTurno(Long id) throws Exception;
     void actualizarTurno(TurnoDTO turno);
     void borrarTurno(Long id);
-    Collection<TurnoDTO> getAll();
+    Set<TurnoDTO> traerTodos();
 }

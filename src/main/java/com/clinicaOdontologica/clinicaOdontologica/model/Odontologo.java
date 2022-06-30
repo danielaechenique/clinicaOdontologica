@@ -16,7 +16,7 @@ public class Odontologo {
     //@SequenceGenerator()
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
+    //@Column (name = "nombre") Podria agregarlo si quisiera cambiar el nombre de la columna, si no va a crearla por defecto con el nombre del atributo
     private String nombre;
     private String apellido;
     private String matricula;
@@ -32,7 +32,7 @@ public class Odontologo {
     }
 
     @OneToMany(mappedBy = "odontologo")
-    @JsonIgnore
+    @JsonIgnore //para no generar bucle infinito recursividad
     private Set<Turno> turnos;
 
 }

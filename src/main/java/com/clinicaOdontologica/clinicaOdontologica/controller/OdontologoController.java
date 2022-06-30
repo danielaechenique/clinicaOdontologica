@@ -45,6 +45,6 @@ public class OdontologoController {
 
     @GetMapping("/list")
     public Set<OdontologoDTO> listStudents() {
-        return odontologoService.getAll();
+        return odontologoService.traerTodos();
     }
 }

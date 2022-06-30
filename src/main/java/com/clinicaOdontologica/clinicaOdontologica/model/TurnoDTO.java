@@ -10,4 +10,6 @@ import java.util.Date;
 public class TurnoDTO {
     private Long id;
     private Date date;
+    private Paciente paciente;
+    private Odontologo odontologo;
 }

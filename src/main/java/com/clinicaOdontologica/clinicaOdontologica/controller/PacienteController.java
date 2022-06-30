@@ -43,7 +43,7 @@ public class PacienteController {
 
     @GetMapping("/list")
     public Collection<PacienteDTO> listPacientes() {
-        return pacienteService.getAll();
+        return pacienteService.traerTodos();
     }
 
 

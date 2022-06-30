@@ -46,6 +46,6 @@ public class TurnoController {
 
     @GetMapping("/list")
     public Collection<TurnoDTO> listStudents() {
-        return turnoService.getAll();
+        return turnoService.traerTodos();
     }
 }
