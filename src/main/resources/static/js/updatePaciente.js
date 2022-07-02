@@ -11,8 +11,9 @@ window.addEventListener('load', function () {
         //para poder identificarlo y modificarlo para no cargarlo como nuevo
         const formData = {
             id: document.querySelector('#paciente_id').value,
-            name: document.querySelector('#nombre').value,
-            lastname: document.querySelector('#apellido').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
+            dni: document.querySelector('#dni').value,
 
         };
 
@@ -45,8 +46,9 @@ window.addEventListener('load', function () {
           .then(data => {
               let paciente = data;
               document.querySelector('#paciente_id').value = paciente.id;
-              document.querySelector('#nombre').value = paciente.name;
-              document.querySelector('#apellido').value = paciente.lastname;
+              document.querySelector('#nombre').value = paciente.nombre;
+              document.querySelector('#apellido').value = paciente.apellido;
+              document.querySelector('#dni').value = paciente.dni;
 
             //el formulario por default esta oculto y al editar se habilita
               document.querySelector('#div_paciente_updating').style.display = "block";

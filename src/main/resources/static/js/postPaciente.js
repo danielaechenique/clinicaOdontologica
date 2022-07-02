@@ -9,8 +9,8 @@ window.addEventListener('load', function () {
 
         //creamos un JSON que tendrá los datos del nuevo paciente
         const formData = {
-            name: document.querySelector('#nombre').value,
-            lastname: document.querySelector('#apellido').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
 
         };
@@ -37,7 +37,7 @@ window.addEventListener('load', function () {
 
                  document.querySelector('#response').innerHTML = successAlert;
                  document.querySelector('#response').style.display = "block";
-                 //se dejan todos los campos vacíos por si se quiere ingresar otro estudiante
+                 //se dejan todos los campos vacíos por si se quiere ingresar otro paciente
                  resetUploadForm();
 
             })
