@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     (function(){
       //con fetch invocamos a la API de pacientes con el método GET
       //nos devolverá un JSON con una colección de pacientes
+      event.preventDefault();
       const url = '/pacientes/list';
       const settings = {
         method: 'GET'
@@ -46,11 +47,11 @@ window.addEventListener('load', function () {
               //luego los datos del paciente
               //como ultima columna el boton eliminar
              pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
-                                  '<td class=\"td_first_name\">' + paciente.nombre.toUpperCase() + '</td>' +
-                                  '<td class=\"td_last_name\">' + paciente.apellido.toUpperCase() + '</td>' +
-                                  '<td class=\"td_dni\">' + paciente.dni.toUpperCase() + '</td>' +
+                                  '<td class=\"td_first_name\">' + paciente.nombre + '</td>' +
+                                  '<td class=\"td_last_name\">' + paciente.apellido + '</td>' +
+                                  '<td class=\"td_dni\">' + paciente.dni+ '</td>' +
                                   '<td>' + deleteButton + '</td>';
-
+            $('#pacienteTable tbody').append(pacienteRow);
         };
 
 })

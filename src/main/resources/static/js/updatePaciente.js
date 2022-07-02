@@ -55,3 +55,4 @@ window.addEventListener('load', function () {
           }).catch(error => {
               alert("Error: " + error);
           })
+}
