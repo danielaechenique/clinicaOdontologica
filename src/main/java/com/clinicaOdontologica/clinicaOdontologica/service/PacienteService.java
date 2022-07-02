@@ -51,12 +51,12 @@ public class PacienteService implements IPacienteService{
 
     @Override
     public Set<PacienteDTO> traerTodos() {
-        List<Paciente> allPacientes = pacienteRepository.findAll();
-        Set<PacienteDTO> allPacientesDTO = new HashSet<PacienteDTO>();
-        for(Paciente paciente: allPacientes)
-            allPacientesDTO.add(mapper.convertValue(paciente,PacienteDTO.class));
+        List<Paciente> todosLosPacientes = pacienteRepository.findAll();
+        Set<PacienteDTO> todosLosPacientesDTO = new HashSet<PacienteDTO>();
+        for(Paciente paciente: todosLosPacientes)
+            todosLosPacientesDTO.add(mapper.convertValue(paciente,PacienteDTO.class));
 
-        return allPacientesDTO;
+        return todosLosPacientesDTO;
     }
 
 }

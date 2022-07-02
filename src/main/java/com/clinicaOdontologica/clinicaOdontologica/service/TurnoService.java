@@ -24,6 +24,9 @@ public class TurnoService implements ITurnoService {
     @Override
     public void crearTurno(TurnoDTO turno) {
         guardarTurno(turno);
+
+        //turno.getOdontologo().setId(2L);
+        //turno.getPaciente().setId(3L);
     }
 
     @Override
@@ -33,7 +36,7 @@ public class TurnoService implements ITurnoService {
         if(turnoEncontrado.isPresent())
             turnoDTO = mapper.convertValue(turnoEncontrado, TurnoDTO.class);
         else
-            throw new Exception("Turno no existe");
+            throw new Exception("El turno no existe");
         return turnoDTO;
     }
 
@@ -49,11 +52,11 @@ public class TurnoService implements ITurnoService {
 
     @Override
     public Set<TurnoDTO> traerTodos() {
-        List<Turno> allTurnos = turnoRepository.findAll();
-        Set<TurnoDTO> allTurnosDTO = new HashSet<TurnoDTO>();
-        for(Turno turno: allTurnos)
-            allTurnosDTO.add(mapper.convertValue(turno,TurnoDTO.class));
+        List<Turno> todosLosTurnos = turnoRepository.findAll();
+        Set<TurnoDTO> todosLosTurnosDTO = new HashSet<TurnoDTO>();
+        for(Turno turno: todosLosTurnos)
+            todosLosTurnosDTO.add(mapper.convertValue(turno,TurnoDTO.class));
 
-        return allTurnosDTO;
+        return todosLosTurnosDTO;
     }
 }

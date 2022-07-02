@@ -1,0 +1,5 @@
+[2022-07-0215:41:26] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0215:43:13] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0215:45:59] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0215:53:05] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 6]

@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class PacienteServiceTest {
     @Autowired
-    private IPacienteService pacienteService;
+    IPacienteService pacienteService;
 
-    @BeforeAll
+    //@BeforeAll
     @Test
     public void testCrearPaciente(){
         PacienteDTO pacienteDTO = new PacienteDTO();
@@ -24,8 +24,8 @@ class PacienteServiceTest {
         pacienteDTO.setDni("1234");
         pacienteService.crearPaciente(pacienteDTO);
 
-        PacienteDTO pacienteDaniela = pacienteService.leerPaciente(1L);
-
-        assertTrue(pacienteDaniela != null);
+        assertTrue(pacienteService.traerTodos().size()>0);
+        //PacienteDTO pacienteDaniela = pacienteService.leerPaciente(1L);
+        //assertTrue(pacienteDaniela != null);
     }
 }

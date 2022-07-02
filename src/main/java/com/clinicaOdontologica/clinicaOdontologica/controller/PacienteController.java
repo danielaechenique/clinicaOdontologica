@@ -15,7 +15,7 @@ public class PacienteController {
     @Autowired
     IPacienteService pacienteService;
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<?> agregarPaciente(@RequestBody PacienteDTO paciente) {
         pacienteService.crearPaciente(paciente);
         return ResponseEntity.ok(HttpStatus.OK);
@@ -37,7 +37,7 @@ public class PacienteController {
 
         ResponseEntity<String> response = null;
         pacienteService.borrarPaciente(id);
-        response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
+        response = ResponseEntity.status(HttpStatus.OK).body("El paciente fue eliminado");
         return response;
     }
 

@@ -34,7 +34,7 @@ public class OdontologoService implements IOdontologoService{
         if(odontologoEncontrado.isPresent())
             odontologoDTO = mapper.convertValue(odontologoEncontrado, OdontologoDTO.class);
         else
-            throw new Exception("Odontologo no existe");
+            throw new Exception("El odontologo que buscas no existe");
         return odontologoDTO;
 
     }
@@ -51,12 +51,12 @@ public class OdontologoService implements IOdontologoService{
 
     @Override
     public Set<OdontologoDTO> traerTodos() {
-        List<Odontologo> allOdontologos = odontologoRepository.findAll();
-        Set<OdontologoDTO> allOdontologosDTO = new HashSet<>();
-        for(Odontologo odontologo: allOdontologos)
-            allOdontologosDTO.add(mapper.convertValue(odontologo,OdontologoDTO.class));
+        List<Odontologo> todosLosOdontologos = odontologoRepository.findAll();
+        Set<OdontologoDTO> todosLosOdontologosDTO = new HashSet<OdontologoDTO>();
+        for(Odontologo odontologo: todosLosOdontologos)
+            todosLosOdontologosDTO.add(mapper.convertValue(odontologo,OdontologoDTO.class));
 
-        return allOdontologosDTO;
+        return todosLosOdontologosDTO;
     }
 
 }
