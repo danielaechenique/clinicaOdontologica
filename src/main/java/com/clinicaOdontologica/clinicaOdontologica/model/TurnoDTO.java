@@ -3,13 +3,14 @@ package com.clinicaOdontologica.clinicaOdontologica.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 public class TurnoDTO {
     private Long id;
-    private Date date;
-    private Paciente paciente;
-    private Odontologo odontologo;
+    private String turno;
+    //private LocalDateTime turno;
+    //private Paciente paciente;
+    //private Odontologo odontologo;
 }
