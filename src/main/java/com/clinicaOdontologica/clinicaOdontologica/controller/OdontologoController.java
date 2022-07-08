@@ -2,7 +2,6 @@ package com.clinicaOdontologica.clinicaOdontologica.controller;
 
 import com.clinicaOdontologica.clinicaOdontologica.model.OdontologoDTO;
 import com.clinicaOdontologica.clinicaOdontologica.service.IOdontologoService;
-import com.clinicaOdontologica.clinicaOdontologica.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,12 +38,13 @@ public class OdontologoController {
 
         ResponseEntity<String> response = null;
         odontologoService.borrarOdontologo(id);
-        response = ResponseEntity.status(HttpStatus.OK).body("Eliminado");
+        response = ResponseEntity.status(HttpStatus.OK).body("El odontologo fue eliminado");
         return response;
     }
 
     @GetMapping("/list")
-    public Set<OdontologoDTO> listStudents() {
+    public Set<OdontologoDTO> listarOdontologos() {
         return odontologoService.traerTodos();
     }
+
 }

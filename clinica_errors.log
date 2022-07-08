@@ -3,3 +3,28 @@
 [2022-07-0215:45:59] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
 [2022-07-0215:53:05] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
  at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 6]
+[2022-07-0811:49:46] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:50:06] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:51:09] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:51:20] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:51:55] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:52:03] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0811:52:15] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.clinicaOdontologica.clinicaOdontologica.controller.OdontologoController.agregarOdontologo(com.clinicaOdontologica.clinicaOdontologica.model.OdontologoDTO)
+[2022-07-0812:02:26] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:03:23] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:04:08] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:25:23] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:25:31] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:26:10] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:31:35] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:31:39] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.clinicaOdontologica.clinicaOdontologica.controller.PacienteController.actualizarPaciente(com.clinicaOdontologica.clinicaOdontologica.model.PacienteDTO)
+[2022-07-0812:45:58] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:46:01] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:46:06] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:46:07] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:46:09] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0812:46:11] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0815:48:20] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.clinicaOdontologica.clinicaOdontologica.controller.PacienteController.actualizarPaciente(com.clinicaOdontologica.clinicaOdontologica.model.PacienteDTO)
+[2022-07-0818:23:32] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.clinicaOdontologica.clinicaOdontologica.controller.PacienteController.actualizarPaciente(com.clinicaOdontologica.clinicaOdontologica.model.PacienteDTO)
+[2022-07-0818:23:37] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-0818:27:48] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
