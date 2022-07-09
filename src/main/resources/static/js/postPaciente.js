@@ -12,6 +12,7 @@ window.addEventListener('load', function () {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
+            fechaDeAlta: document.querySelector('#fechaDeAlta').value,
 
         };
 
@@ -59,6 +60,7 @@ window.addEventListener('load', function () {
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
         document.querySelector('#dni').value = "";
+        document.querySelector('#fechaDeAlta').value = "";
 
     }
 

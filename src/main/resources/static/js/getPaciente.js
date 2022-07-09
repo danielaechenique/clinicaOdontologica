@@ -49,7 +49,8 @@ window.addEventListener('load', function () {
              pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
                                   '<td class=\"td_first_name\">' + paciente.nombre + '</td>' +
                                   '<td class=\"td_last_name\">' + paciente.apellido + '</td>' +
-                                  '<td class=\"td_dni\">' + paciente.dni+ '</td>' +
+                                  '<td class=\"td_dni\">' + paciente.dni+ '</td>'
+                                  '<td class=\"td_fechaDeAlta\">' + paciente.fechaDeAlta+ '</td>'+
                                   '<td>' + deleteButton + '</td>';
             $('#pacienteTable tbody').append(pacienteRow);
         };

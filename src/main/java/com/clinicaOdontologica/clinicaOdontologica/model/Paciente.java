@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,7 +20,7 @@ public class Paciente {
     private String apellido;
     private String nombre;
     private String dni;
-    //private Date fechaDeAlta;
+    private LocalDate fechaDeAlta;
     // agregar relacion de domicilio
     //private Domicilio domicilio;
 

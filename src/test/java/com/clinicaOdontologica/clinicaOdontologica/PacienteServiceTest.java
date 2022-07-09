@@ -22,6 +22,7 @@ class PacienteServiceTest {
         pacienteDTO.setNombre("daniela");
         pacienteDTO.setApellido("echenique");
         pacienteDTO.setDni("1234");
+        //pacienteDTO.setFechaDeAlta();
         pacienteService.crearPaciente(pacienteDTO);
 
         assertTrue(pacienteService.traerTodos().size()>0);
