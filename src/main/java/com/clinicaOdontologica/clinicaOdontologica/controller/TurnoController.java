@@ -1,8 +1,10 @@
 package com.clinicaOdontologica.clinicaOdontologica.controller;
 
 
-import com.clinicaOdontologica.clinicaOdontologica.model.TurnoDTO;
+import com.clinicaOdontologica.clinicaOdontologica.model.*;
 
+import com.clinicaOdontologica.clinicaOdontologica.service.IOdontologoService;
+import com.clinicaOdontologica.clinicaOdontologica.service.IPacienteService;
 import com.clinicaOdontologica.clinicaOdontologica.service.ITurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Optional;
 
 
 @RestController
@@ -17,11 +20,30 @@ import java.util.Collection;
 public class TurnoController {
     @Autowired
     ITurnoService turnoService;
+    @Autowired
+    IOdontologoService odontologoService;
+    @Autowired
+    IPacienteService pacienteService;
 
     @PostMapping
     public ResponseEntity<?> agregarTurno(@RequestBody TurnoDTO turno) {
-        turnoService.crearTurno(turno);
-        return ResponseEntity.ok(HttpStatus.OK);
+        //turnoService.crearTurno(turno);
+        //return ResponseEntity.ok(HttpStatus.OK);
+        ResponseEntity<?> response;
+
+        PacienteDTO pacienteDTO = pacienteService.leerPaciente(turno.getPaciente().getId());
+        OdontologoDTO odontologoDTO = odontologoService.leerOdontologo(turno.getOdontologo().getId());
+
+        if (pacienteDTO!=null && odontologoDTO!=null) {
+            response = ResponseEntity.ok(turnoService.crearTurno(turno));
+        }
+        else {
+            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        return response;
+        /*ResponseEntity<?> response;
+        response = ResponseEntity.ok(turnoService.crearTurno(turno));
+        return response;*/
     }
 
 

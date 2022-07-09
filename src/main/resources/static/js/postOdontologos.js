@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
-            dni: document.querySelector('#matricula').value,
+            matricula: document.querySelector('#matricula').value,
 
         };
 

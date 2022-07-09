@@ -7,6 +7,8 @@ window.addEventListener('load', function () {
 
         const formData = {
             turno: document.querySelector('#turno').value,
+            odontologo: document.querySelector('#odontologo').value,
+            paciente: document.querySelector('#paciente').value,
 
         };
 
@@ -46,7 +48,8 @@ window.addEventListener('load', function () {
 
     function resetUploadForm(){
         document.querySelector('#turno').value = "";
-
+        document.querySelector('#odontologo').value = "";
+        document.querySelector('#paciente').value = "";
 
     }
 

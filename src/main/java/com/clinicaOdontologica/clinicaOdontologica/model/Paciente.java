@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,7 +24,7 @@ public class Paciente {
     // agregar relacion de domicilio
     //private Domicilio domicilio;
 
-    @OneToMany(mappedBy = "paciente")
+    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY) //, cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Turno> turnos;
+    private Set<Turno> turnos = new HashSet<>();
 }

@@ -5,6 +5,8 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -31,8 +33,8 @@ public class Odontologo {
     public Odontologo(){
     }
 
-    @OneToMany(mappedBy = "odontologo")
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)//, cascade = CascadeType.ALL)
     @JsonIgnore //para no generar bucle infinito recursividad
-    private Set<Turno> turnos;
+    private Set<Turno> turnos = new HashSet<>();
 
 }

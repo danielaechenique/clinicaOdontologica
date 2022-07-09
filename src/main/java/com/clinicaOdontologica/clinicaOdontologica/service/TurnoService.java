@@ -22,11 +22,11 @@ public class TurnoService implements ITurnoService {
         turnoRepository.save(newTurno);
     }
     @Override
-    public void crearTurno(TurnoDTO turno) {
+    public TurnoDTO crearTurno(TurnoDTO turno) {
         guardarTurno(turno);
-
-        //turno.getOdontologo().setId(2L);
-        //turno.getPaciente().setId(3L);
+        /*turno.getOdontologo().setId(2L);
+        turno.getPaciente().setId(3L);*/
+        return turno;
     }
 
     @Override

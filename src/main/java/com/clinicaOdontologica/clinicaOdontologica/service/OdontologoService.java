@@ -28,13 +28,13 @@ public class OdontologoService implements IOdontologoService{
     }
 
     @Override
-    public OdontologoDTO leerOdontologo(Long id) throws Exception {
+    public OdontologoDTO leerOdontologo(Long id) { //throws Exception {
         Optional<Odontologo> odontologoEncontrado = odontologoRepository.findById(id);
         OdontologoDTO odontologoDTO = null;
         if(odontologoEncontrado.isPresent())
             odontologoDTO = mapper.convertValue(odontologoEncontrado, OdontologoDTO.class);
-        else
-            throw new Exception("El odontologo que buscas no existe");
+        //else
+          //  throw new Exception("El odontologo que buscas no existe");
         return odontologoDTO;
 
     }
