@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,8 +16,8 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private String turno;
-    //private LocalDateTime turno;
+    //private String turno;
+    private LocalDate turno;
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")//, nullable = false)
