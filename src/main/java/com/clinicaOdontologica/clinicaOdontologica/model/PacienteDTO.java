@@ -20,6 +20,6 @@ public class PacienteDTO {
     private String dni;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate fechaDeAlta;
-    //private Domicilio domicilio;
+    private Domicilio domicilio;
     private Set<Turno> turnos;
 }

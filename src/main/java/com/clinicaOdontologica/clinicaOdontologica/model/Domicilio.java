@@ -1,8 +1,12 @@
 package com.clinicaOdontologica.clinicaOdontologica.model;
 
-import java.util.Objects;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "domicilio")
 public class Domicilio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String calle;
     private int numero;
@@ -71,7 +75,7 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -95,5 +99,5 @@ public class Domicilio {
                 "\n\t\tNumero: '" + numero + '\'' +
                 "\n\t\tLocalidad: " + localidad +
                 "\n\t\tProvincia: " + provincia;
-    }
+    }*/
 }

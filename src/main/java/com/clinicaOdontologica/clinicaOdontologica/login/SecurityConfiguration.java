@@ -1,3 +1,4 @@
+/*
 package com.clinicaOdontologica.clinicaOdontologica.login;
 
 import com.clinicaOdontologica.clinicaOdontologica.service.AppUserService;
@@ -44,3 +45,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return provider;
     }
 }
+*/

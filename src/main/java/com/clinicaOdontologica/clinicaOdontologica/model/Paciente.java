@@ -21,8 +21,9 @@ public class Paciente {
     private String nombre;
     private String dni;
     private LocalDate fechaDeAlta;
-    // agregar relacion de domicilio
-    //private Domicilio domicilio;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_domicilio", referencedColumnName = "id")
+    private Domicilio domicilio;
 
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY) //, cascade = CascadeType.ALL)
     @JsonIgnore
