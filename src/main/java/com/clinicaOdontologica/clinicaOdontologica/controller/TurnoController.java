@@ -27,8 +27,6 @@ public class TurnoController {
 
     @PostMapping
     public ResponseEntity<?> agregarTurno(@RequestBody TurnoDTO turno) {
-        //turnoService.crearTurno(turno);
-        //return ResponseEntity.ok(HttpStatus.OK);
         ResponseEntity<?> response;
 
         PacienteDTO pacienteDTO = pacienteService.leerPaciente(turno.getPaciente().getId());
@@ -41,9 +39,7 @@ public class TurnoController {
             response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         return response;
-        /*ResponseEntity<?> response;
-        response = ResponseEntity.ok(turnoService.crearTurno(turno));
-        return response;*/
+
     }
 
 
